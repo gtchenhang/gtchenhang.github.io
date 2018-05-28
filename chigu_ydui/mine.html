@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<!-- 引入YDUI样式 -->
+		<link rel="stylesheet" href="css/ydui.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<!-- 引入YDUI自适应解决方案类库 -->
+		<script src="js/ydui.flexible.js"></script>
+	</head>
+	<style>
+		.checkbox-wrap {
+			width: 100%;
+		}
+		
+		body {
+			background-color: #fff;
+		}
+		
+		.checkbox-wrap:after {
+			position: absolute;
+			border-bottom: none;
+		}
+		
+		.m-grids-3 {
+			background-color: inherit;
+			border-bottom: none !important;
+		}
+		
+		.m-grids-3:before {
+			left: 0;
+			border-bottom: none;
+		}
+		
+		.m-grids-3 .tabbar-item i {
+			font-size: .58rem;
+			color: #afc738;
+		}
+		
+		.btn-danger {
+			background-color: #EF4F4F;
+			color: #FFF;
+			margin-bottom: 0;
+			width: 100%;
+			height: .9rem;
+			border-radius: 0;
+		}
+		
+		.grids-item:after {
+			border-bottom: none;
+		}
+		
+		.m-grids-3 .grids-item:not(:nth-child(3n)):before {
+			border-right: none;
+		}
+		
+		.m-grids-3 .tabbar-txt {
+			padding-top: .2rem;
+			color: #666;
+		}
+		
+		.minebg {
+			width: 200%;
+			padding: 100% 0;
+			border-radius: 50%;
+			background-color: #afc738;
+			position: absolute;
+			right: -50%;
+			top: -99%;
+			z-index: -1;
+		}
+		
+		.headpic {
+			margin: .6rem;
+			padding: .65rem 0 1.2rem 0;
+			border-radius: 6px;
+			background: #FFFFFF url(img/minebg.png) center bottom repeat-x;
+			box-shadow: 1px 2px 1px 1px #eeeeeb;
+			
+		}
+		.headpic p{text-align: center;margin-top: .3rem;font-size: 120%;}
+		.piccircle{width: 1.4rem; height: 1.4rem; border-radius:50%;border: solid 1px #afc738;margin: 0 auto;overflow: hidden;}
+	</style>
+
+	<body>
+
+		<section class="g-flexview">
+
+			<div class="g-scrollview">
+				<div class="minebg"></div>
+				<div class="headpic">
+					<div class="piccircle"><img src="img/newimg.jpg" /></div>
+					<p>狗狗小丸子</p>
+				</div>
+				<div class="m-grids-3">
+					<a href="#" class="grids-item">
+						<div class="grids-txt"><span class="tabbar-item">
+        <span class="tabbar-icon">
+            <i class="iconfont icon-dingdan"></i>
+        </span>
+							<span class="tabbar-txt">我的订单</span>
+							</span>
+						</div>
+					</a>
+					<a href="#" class="grids-item">
+						<div class="grids-txt"><span class="tabbar-item">
+        <span class="tabbar-icon">
+            <i class="iconfont icon-dizhi"></i>
+        </span>
+							<span class="tabbar-txt">收货地址</span>
+							</span>
+						</div>
+					</a>
+					<a href="#" class="grids-item">
+						<div class="grids-txt"><span class="tabbar-item">
+        <span class="tabbar-icon">
+            <i class="iconfont icon-lianxikefu"></i>
+        </span>
+							<span class="tabbar-txt">联系客服</span>
+							</span>
+						</div>
+					</a>
+					<a href="#" class="grids-item">
+						<div class="grids-txt"><span class="tabbar-item">
+        <span class="tabbar-icon">
+            <i class="iconfont icon-2guanyuwomeneps"></i>
+        </span>
+							<span class="tabbar-txt">关于我们</span>
+							</span>
+						</div>
+					</a>
+				</div>
+
+			</div>
+
+			<footer class="m-tabbar">
+				<a href="#" class="tabbar-item">
+					<span class="tabbar-icon">
+            <i class="iconfont icon-shouye1"></i>
+        </span>
+					<span class="tabbar-txt">首页</span>
+				</a>
+				<a href="#" class="tabbar-item">
+					<span class="tabbar-icon">
+            <i class="iconfont icon-gouwuche1"></i>
+            
+        </span>
+					<span class="tabbar-txt">购物车</span>
+
+				</a>
+				<a href="#" class="tabbar-item tabbar-active">
+					<span class="tabbar-icon">
+            <i class="iconfont icon-xiazai"></i>
+          
+        </span>
+					<span class="tabbar-txt">我的</span>
+				</a>
+			</footer>
+		</section>
+
+		<!-- 引入jQuery 2.0+ -->
+		<script src="js/jquery.min.js"></script>
+		<!-- 引入YDUI脚本 -->
+		<script src="js/ydui.js"></script>
+		<script>
+			! function($) {
+				$('.J_Quantity').spinner({
+					input: '.J_Input',
+					add: '.J_Add',
+					minus: '.J_Del',
+					unit: function() {
+						return 1;
+					},
+					max: function() {
+						return(1 + 2 + 3 + 4 + 5) * 5;
+					},
+					callback: function(value, $ele) {
+						// $ele 当前文本框[jQuery对象]
+						// $ele.css('background', '#FF5E53');
+						console.log('值：' + value);
+					}
+				});
+
+			}(jQuery);
+		</script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<!-- 引入YDUI样式 -->
+		<link rel="stylesheet" href="css/ydui.css" />
+		<!-- 引入YDUI自适应解决方案类库 -->
+		<link rel="stylesheet" href="css/base.css" />
+		<script src="js/ydui.flexible.js"></script>
+	</head>
+	<style>
+		body {
+			background-color: #f2f2f2;
+		}
+		
+		.J_Confirm {
+			margin-left: .5rem;
+		}
+		.confirm-bd {
+  padding: .4rem .3rem;
+  text-align: center;
+  color: #000000;
+  font-size: .3rem;
+}
+.m-confirm {
+    width: 75%;
+        border-radius: 5px;
+    
+}
+.confirm-ft {
+    line-height: 50px;  
+}
+	</style>
+
+	<body>
+
+		<section class="g-flexview">
+
+			<div class="g-scrollview">
+
+				<div class="addresslist">
+					<div class="addressname">
+						<span>陈航</span>
+						<span class="f-right">13419522009</span>
+					</div>
+					<div class="selectaddress">
+						广东省深圳市罗湖区黄贝街道爱国路1广东省深圳市罗湖区黄贝街道爱国路1022号建国大厦706
+					</div>
+					<div class="defaultaddress">
+						<div class="m-cell selectall">
+							<label class="cell-item">
+        						
+       							<label class="cell-right">
+           						<input type="checkbox" name="checkbox"/>
+           						<i class="cell-checkbox-icon"></i>
+       							</label><span class="cell-left cell-span">默认地址</span>
+							</label>
+						</div> <span class="f-right"><a >编辑</a><a class="J_Confirm">删除</a></span>
+					</div>
+				</div>
+
+					<div class="addresslist">
+					<div class="addressname">
+						<span>陈航</span>
+						<span class="f-right">13419522009</span>
+					</div>
+					<div class="selectaddress">
+						广东省深圳市罗湖区黄贝街道爱国路1广东省深圳市罗湖区黄贝街道爱国路1022号建国大厦706
+					</div>
+					<div class="defaultaddress">
+						<div class="m-cell selectall">
+							<label class="cell-item">
+        						
+       							<label class="cell-right">
+           						<input type="checkbox" name="checkbox"/>
+           						<i class="cell-checkbox-icon"></i>
+       							</label><span class="cell-left cell-span">默认地址</span>
+							</label>
+						</div> <span class="f-right"><a >编辑</a><a class="J_Confirm">删除</a></span>
+					</div>
+				</div>
+				
+					<div class="addresslist">
+					<div class="addressname">
+						<span>陈航</span>
+						<span class="f-right">13419522009</span>
+					</div>
+					<div class="selectaddress">
+						广东省深圳市罗湖区黄贝街道爱国路1广东省深圳市罗湖区黄贝街道爱国路1022号建国大厦706
+					</div>
+					<div class="defaultaddress">
+						<div class="m-cell selectall">
+							<label class="cell-item">
+        						
+       							<label class="cell-right">
+           						<input type="checkbox" name="checkbox"/>
+           						<i class="cell-checkbox-icon"></i>
+       							</label><span class="cell-left cell-span">默认地址</span>
+							</label>
+						</div> <span class="f-right"><a >编辑</a><a class="J_Confirm">删除</a></span>
+					</div>
+				</div>
+				
+					<div class="addresslist">
+					<div class="addressname">
+						<span>陈航</span>
+						<span class="f-right">13419522009</span>
+					</div>
+					<div class="selectaddress">
+						广东省深圳市罗湖区黄贝街道爱国路1广东省深圳市罗湖区黄贝街道爱国路1022号建国大厦706
+					</div>
+					<div class="defaultaddress">
+						<div class="m-cell selectall">
+							<label class="cell-item">
+        						
+       							<label class="cell-right">
+           						<input type="checkbox" name="checkbox"/>
+           						<i class="cell-checkbox-icon"></i>
+       							</label><span class="cell-left cell-span">默认地址</span>
+							</label>
+						</div> <span class="f-right"><a >编辑</a><a class="J_Confirm">删除</a></span>
+					</div>
+				</div>
+
+			</div>
+
+			<button type="button" class="btn-block btn-primary">添加收获地址</button>
+
+		</section>
+
+		<!-- 引入jQuery 2.0+ -->
+		<script src="js/jquery.min.js"></script>
+		<!-- 引入YDUI脚本 -->
+		<script src="js/ydui.js"></script>
+		<script>
+			! function(win, $) {
+				var dialog = win.YDUI.dialog;
+
+				/* 普通确认框 */
+				$('.J_Confirm').on('click', function() {
+					var that;
+					that=$(this);
+					dialog.confirm('选填标题', '确认要删除该地址吗?', function() {
+						//dialog.toast('你点了确定', 'none', 1000);
+						
+						that.parents('.addresslist').hide();
+						
+					});
+				});
+
+			}(window, jQuery);
+		</script>
+	</body>
+
+</html>

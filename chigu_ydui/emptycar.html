@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<!-- 引入YDUI样式 -->
+		<link rel="stylesheet" href="css/ydui.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<!-- 引入YDUI自适应解决方案类库 -->
+		<script src="js/ydui.flexible.js"></script>
+	</head>
+	<style>
+		.checkbox-wrap {
+			width: 100%;
+		}
+		
+		body {
+			background-color: #f2f2f2;
+		}
+		
+		.checkbox-wrap:after {
+			position: absolute;
+			border-bottom: none;
+		}
+		
+		.btn-danger {
+			background-color: #EF4F4F;
+			color: #FFF;
+			margin-bottom: 0;
+			width: 100%;
+			height: .9rem;
+			border-radius: 0;
+		}
+	</style>
+
+	<body>
+
+		<section class="g-flexview">
+			
+			<div class="g-scrollview">
+				<div class="circle"><i class="iconfont icon-gouwuche1"></i></div>
+				<div class="circletips">
+					<p class="cartitle">购物车还是空的</p>
+					<p class="selectpro">快去挑选几件喜欢的商品吧~</p>
+					<button type="button" class="btn-block btn-primary">去首页逛逛</button>
+				</div>
+				
+			</div>
+
+		
+			<footer class="m-tabbar">
+    <a href="#" class="tabbar-item">
+        <span class="tabbar-icon">
+            <i class="iconfont icon-shouye1"></i>
+        </span>
+        <span class="tabbar-txt">首页</span>
+    </a>
+    <a href="#" class="tabbar-item tabbar-active">
+        <span class="tabbar-icon">
+            <i class="iconfont icon-gouwuche1"></i>
+            
+        </span>
+        <span class="tabbar-txt">购物车</span>
+
+    </a>
+    <a href="#" class="tabbar-item">
+        <span class="tabbar-icon">
+            <i class="iconfont icon-xiazai"></i>
+          
+        </span>
+        <span class="tabbar-txt">我的</span>
+    </a>
+</footer>
+		</section>
+
+		<!-- 引入jQuery 2.0+ -->
+		<script src="js/jquery.min.js"></script>
+		<!-- 引入YDUI脚本 -->
+		<script src="js/ydui.js"></script>
+		<script>
+			! function($) {
+				$('.J_Quantity').spinner({
+					input: '.J_Input',
+					add: '.J_Add',
+					minus: '.J_Del',
+					unit: function() {
+						return 1;
+					},
+					max: function() {
+						return(1 + 2 + 3 + 4 + 5) * 5;
+					},
+					callback: function(value, $ele) {
+						// $ele 当前文本框[jQuery对象]
+						// $ele.css('background', '#FF5E53');
+						console.log('值：' + value);
+					}
+				});
+
+			}(jQuery);
+		</script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+
+</html>
