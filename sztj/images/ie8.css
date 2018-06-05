@@ -1,0 +1,55 @@
+.gov {  
+    background: #fff url(govcion.png) center 20px no-repeat;
+}
+.sj {  
+    background: #fff url(phoneimg.png) center 20px no-repeat;
+}
+.wx {
+    background: #fff url(wxicon.png) center 20px no-repeat; 
+}
+.sina {
+    background: #fff url(sinaicon.png) center 20px no-repeat;
+}
+.functionality ul li {
+    width: 206px;
+    height: 150px;
+    background-color: #666;
+    float: left;
+    margin-left: 8.5px;
+    text-align: center;
+    color: white;
+  
+}
+.dataright, .dataleft {
+    border: 1px solid #bbb;
+}
+.newsright {
+    width: 620px;
+    height: 566px;
+    overflow: hidden;
+    float: right;
+    margin-top: 100px;
+   	border:1px solid #bbb;
+}
+.onlyphone{
+	display:none;
+}
+.hotSearch ul li {
+    float: left;
+    line-height: 40px;
+    margin-left: 20px;
+    padding: 0 20px;
+    color: white;
+    border-radius: 20px;
+    background: #666666;
+}
+.navlist .nav1 {
+	float: left;
+	line-height: 100px;
+	vertical-align: middle;
+	font-size: 17px;
+	color: #666666;
+	text-align: center;
+	padding: 0 18px;
+	position: relative;
+}

@@ -2,28 +2,41 @@
 <html>
 
 	
+		<head>
 		<!--顶部开始-->
-		  <head>
-			<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+			<meta name="ArticleTitle" content="">
+			<meta name="pubDate" content="">
+			<meta name="ContentSource" content="">
+		  	
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 
-			<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
 
-			<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
-			<meta name="renderer" content="webkit">
+		<meta name="renderer" content="webkit">
 
-			<meta name="SiteName" content="深圳市统计局">
-			<meta name="SiteDomain" content="sztj.gov.cn">
-			<meta name="SiteIDCode" content="4403000017">
-			<title>深圳市统计局</title>	
-			
-			<link rel="stylesheet" media="screen" href="./images/base.css" />
-
-			<script type="text/javascript" src="./images/jquery.1.9.1.min.js"></script>
-			<script type="text/javascript" src="./images/2018index.js"></script>
-			<script type="text/javascript" src="./images/language.js"></script>
-		</head>
+		<title> 深圳市统计局</title>
+		<meta name="SiteName" content="深圳市统计局" />
+		<meta name="SiteDomain" content="sztj.gov.cn" />
+		<meta name="SiteIDCode" content="4403000017" />
+		<meta name="ColumnName" content="">
+		<meta name="ColumnDescription" content="">
+		<meta name="ColumnKeywords" content="">
+		<meta name="ColumnType" content="">
+		<meta name="keywords" content="深圳市统计局" />
+		<meta name="description" content="深圳市统计局" />
+		
+		<link rel="stylesheet" media="screen" href="./images/base.css" />
+<!--[if IE 8 ]>
+ <link rel="stylesheet" type="text/css" media="all" href="./images/ie8.css" />
+<![endif]-->
+		<script type="text/javascript" src="./images/jquery.1.9.1.min.js"></script>
+		<script type="text/javascript" src="./images/2018index.js"></script>
+		<script type="text/javascript" src="./images/language.js"></script>
+	
 		<!--顶部结束-->
+	</head>
 		<style>
 			.tabnewsimg{width:200px;}
 			.newslist li {
@@ -45,7 +58,7 @@
 					<p class="allborwse" style="display:none">
 						无障碍浏览
 					</p>
-					<p class="navlang">简体</p>
+					<p class="navlang" id="navlang">简体</p>
 				</div>
 				<div class="navtogwarp">
 					<div class="nav-itemsp" data-target=".navbar-collapse" data-toggle="collapse" type="button">
@@ -56,12 +69,12 @@
 				</div>
 				</div>
 				<ul class="navlist  animated">
-					<li class="navindex  "><span></span><a href="">首页</a></li>
+					<li class="navindex  nav1"><span></span><a href="">首页</a></li>
 									
 					
 
 						
-					<li class=" "><span></span><a href="./xxgk/ ">信息公开</a>
+					<li class="nav1"><span></span><a href="./xxgk/ ">信息公开</a>
 						<div class="level_list">
 							<ul>
 							     
@@ -263,7 +276,7 @@
 						
 			
 					
-						<li class=" "><span></span><a href="./tjsj/">统计数据</a>
+						<li class="nav1"><span></span><a href="./tjsj/">统计数据</a>
 						<div class="level_list">
 							<ul>
 							     
@@ -309,7 +322,7 @@
 					
 				
 					
-						<li class=" "><span></span><a href="./hdjl/">互动交流</a>
+						<li class="nav1"><span></span><a href="./hdjl/">互动交流</a>
 						<div class="level_list">
 							<ul>
 							     
@@ -405,7 +418,7 @@
 					
 			
 					</li> 
-							<li class=" "><span></span><a href="./ztzl/">专题专栏</a>
+							<li class="nav1"><span></span><a href="./ztzl/">专题专栏</a>
 						<div class="level_list">
 							<ul>
 							     
@@ -623,7 +636,7 @@
 						</div>
 					</li>
 					
-					<li class=" "><span></span><a target="_blank" href="http://www.gd.gov.cn/govpub/xxts/">政声传递</a></li>
+					<li class="nav1"><span></span><a target="_blank" href="http://www.gd.gov.cn/govpub/xxts/">政声传递</a></li>
 				</ul>
 			</div>
 		</div>
@@ -636,7 +649,7 @@
 		</div>
 		<div class="main">
 			<form id="myForm" onsubmit="return false;" method="post" target="_blank">
-				<div class="search time10 delay10  "><input type="text" id="textfield" name="searchword" onkeydown="if(event.keyCode==13){searchfun();}" placeholder="请输入关键检索内容" />
+				<div class="search time10 delay10"><input type="text" id="textfield" name="searchword" onkeydown="if(event.keyCode==13){searchfun();}" placeholder="请输入关键检索内容" />
 					<div class="btn" id="submitbuttom"></div>
 				</div>
 			</form>
@@ -708,12 +721,12 @@
 			<div class="functionality">
 				<ul>
 					<li>
-						<a href="http://www.sztj.net.cn/index.jsp?jwidth=1268" target="_blank"><img src="./images/systemicon.png" />
+						<a class="notips" href="http://www.sztj.net.cn/index.jsp?jwidth=1268" target="_blank"><img src="./images/systemicon.png" />
 							<p>网上直报系统</p>
 						</a>
 					</li>
 					<li>
-						<a href="http://lwzb.gdstats.gov.cn/bjstat_web/yyaq/loginca.jsp" target="_blank"><img src="./images/tableicon.png" />
+						<a class="notips" href="http://lwzb.gdstats.gov.cn/bjstat_web/yyaq/loginca.jsp" target="_blank"><img src="./images/tableicon.png" />
 							<p>企业一套表软件</p>
 						</a>
 					</li>
@@ -746,10 +759,10 @@
 				<div class="newsallauto">
 							<div class="newsleft">
 				<div id="ChSlider" class="play">
-					<ul class="big_pic">
+					<ul class="big_pic" id="big_pic">
 
-						<div class="prev"><span></span></div>
-						<div class="next"><span></span></div>
+						<div class="prev" id="prev"><span></span></div>
+						<div class="next" id="next"><span></span></div>
 						<div class="bg"></div>
 						
 							<li style="z-index: 2">
@@ -797,7 +810,7 @@
 					</ul>
 
 					<!--小点开始部分-->
-					<div class="small_pic">
+					<div class="small_pic" id="small_pic">
 						<ul style="width:400px;">
 							
 							<li></li>
@@ -830,6 +843,11 @@
 					<ul class="newslist">
 					
 						<li data-type="work">
+							<a><a href="./xxgk/zfxxgkml/qt/gzdt/sjdt/201806/t20180604_12071478.htm" title="市统计局召开统计能力提升和 “四经普”调研专题中心组理论学习会议">市统计局召开统计能力提升和 “四经普”调研专题中...</a></a>
+							<span>2018-06-04</span>
+						</li>
+					
+						<li data-type="work">
 							<a><a href="./xxgk/zfxxgkml/qt/gzdt/sjdt/201805/t20180531_12012078.htm" title="市委办公厅机关党委副书记范伟华称赞市统计局党建业务双融合“立得起，做得好”">市委办公厅机关党委副书记范伟华称赞市统计局党建...</a></a>
 							<span>2018-05-31</span>
 						</li>
@@ -842,11 +860,6 @@
 						<li data-type="work">
 							<a><a href="./xxgk/zfxxgkml/qt/gzdt/sjdt/201805/t20180529_12005418.htm" title="新疆生产建设兵团一行到市统计局交流学习党建业务双融合">新疆生产建设兵团一行到市统计局交流学习党建业务...</a></a>
 							<span>2018-05-29</span>
-						</li>
-					
-						<li data-type="work">
-							<a><a href="./xxgk/zfxxgkml/qt/gzdt/sjdt/201805/t20180524_11932768.htm" title="市统计局杨新洪接受中央电视台采访 深圳统计首次登上新闻联播">市统计局杨新洪接受中央电视台采访 深圳统计首次登...</a></a>
-							<span>2018-05-24</span>
 						</li>
 					
 </ul>
@@ -921,7 +934,7 @@
 		
 		<!-- 改版提示 -->
 		<style>
-			.tips{display:none;width:600px;border:1px solid #eee;position:fixed;top:200px;left:50%;margin-left:-300px;overflow:hidden;border-radius:10px;background-color:#f8f8f8;z-index:999999;padding-bottom:20px;}
+			.tips{width:600px;border:1px solid #eee;position:fixed;top:200px;left:50%;margin-left:-300px;overflow:hidden;border-radius:10px;background-color:#f8f8f8;z-index:999999;padding-bottom:20px;}
 			.tips h1{font-size:18px;text-align:center;padding-top:20px;color:#666;border-bottom:1px solid #eee;padding-bottom:20px;}
 			.tips p{padding:20px;text-align:justify; font-size:14px;color:#666;line-height:2;}
 			.tips .btn2017{width:60%;margin:0 auto;background-color:#eee;color:#333;text-align:center;padding:5px 0;font-size:14px;border-radius:10px;  cursor: pointer;}
@@ -1176,7 +1189,7 @@ $("#cnxh a").addClass("active");
 					
 						<option value="http://www.szft.gov.cn/bmxx/qtjj/ywdt/">福田区统计局</option> 
 					
-						<option value="http://www.szlh.gov.cn/icatalog/98/B217/07/07-01/index.shtml">罗湖区统计局</option> 
+						<option value="http://www.szlh.gov.cn/qgbmxxgkml/tjj/">罗湖区统计局</option> 
 					
 						<option value="http://www.szns.gov.cn/xxgk/bmxxgk/qtjj/">南山区统计局</option> 
 					
@@ -1297,7 +1310,7 @@ $("#cnxh a").addClass("active");
 <div class="footer-bottom">
 	<div class="ft-bm">
 		<ul>
-			<li><a href="./fzlm/wzdh/index_39682.htm" class="fonter_nav_a1">网站导航</a></li>
+			<li><a href="./fzlm/wzdh/" class="fonter_nav_a1">网站导航</a></li>
 			<li><a href="./fzlm/rss/">个性化订阅</a></li>
 			<li><a href="./fzlm/lxwm/">联系我们</a></li>
 			<li><a href="./fzlm/gywm/">版权保护</a></li>
@@ -1363,6 +1376,7 @@ $("#ie6-warning").hide(2000);
 		
 		common.init();
 		common.slider();
+		common.judge();
 		
 		var h =document.getElementsByTagName('html')[0].clientHeight;
 		$('.tabnewsimg').css('bottom',((h/2)-($('.tabnewsimg').outerHeight(true)/2))+'px');$('.big_pic').find('li').eq(0).css('z-index','3')
@@ -1374,7 +1388,6 @@ $("#ie6-warning").hide(2000);
 		$('.btn2017').click(function(){
 			$(".tips").hide();
 		})
-		
 		setTimeout(function(){
 			$('.search').addClass('active');
 			$('.contact').addClass('active');
@@ -1382,5 +1395,8 @@ $("#ie6-warning").hide(2000);
 			$('.cnxh1').addClass('active');
 			
 		},1)
+		
+		
+		
 	})
 </script>

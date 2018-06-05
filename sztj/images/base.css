@@ -208,16 +208,7 @@ a:hover {
 	float: right;
 }
 
-.navlist>li {
-	float: left;
-	line-height: 100px;
-	vertical-align: middle;
-	font-size: 17px;
-	color: #666666;
-	text-align: center;
-	padding: 0 18px;
-	position: relative;
-}
+
 
 .navlist>li a {
 	color: #666666;
@@ -826,7 +817,7 @@ a:hover {
 .newtab {
 	width: 100%;
 	height: 80px;
-	background-color: #f2f2f2;
+	background-color: #f6f6f6;
 }
 
 .worknews,
@@ -1165,10 +1156,12 @@ a:hover {
 }
 
 .dataright {
+	height: auto;
 	width: 952px;
 	float: right;
 	background-color: #FFFFFF;
 	padding-bottom:114px;
+	position: relative;
 }
 
 .dataright,
@@ -1229,13 +1222,6 @@ a:hover {
 	display: block;
 }
 
-.page {
-	width: 556px;
-	margin: 0 auto;
-	overflow: hidden;
-	margin-top: 50px;
-	padding-bottom: 51px;
-}
 
 .page span {
 	margin-right: 20px;
@@ -1660,6 +1646,7 @@ a:hover {
 	background: #f3f3f3;
 	border-bottom: solid 3px #c2c2c2;
 	padding: 38px 0;
+	position: relative;
 }
 @keyframes fadeInyoub{0%{opacity:0;transform:translate3d(100%,0,0)}to{opacity:1;transform:none}}
 	.fadeInyoub {
@@ -1671,6 +1658,13 @@ a:hover {
 .articletitletop {
 	background-color: #f3f3f3;
 }
+.level_list ul li {	
+	line-height: 56px ;
+	position: relative;
+	color: #000000;
+	border-top: solid 1px #d9d9d9;
+	
+}
 @media (min-width: 768px) {
 	.level_list ul li:hover a{
 	background-color: #3584cf;
@@ -1679,14 +1673,6 @@ a:hover {
 .level_list ul li:first-child {
 	border-top: none;
 }	
-
-.level_list ul li {
-	height: 56px;
-	line-height: 56px;
-	position: relative;
-	color: #000000;
-	border-top: solid 1px #d9d9d9;
-}
 .level_list ul li:hover {
 	background-color: #3584cf;
 	color: white;
@@ -1712,7 +1698,16 @@ a:hover {
 	z-index: 2;
 }
 .onlyphone{display:none;}
-
+.navlist .nav1 {
+	float: left;
+	line-height: 100px;
+	vertical-align: middle;
+	font-size: 17px;
+	color: #666666;
+	text-align: center;
+	padding: 0 18px;
+	position: relative;
+}
 }
 
 /* 横向放置的手机及分辨率更小的设备 */
@@ -1733,6 +1728,9 @@ a:hover {
 		display: block;
 		width: 100%;
 	}
+	.navlist .nav1 {	
+	padding: 0 18px;	
+}
 	#cnxh{
 		display:none;
 	}

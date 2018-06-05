@@ -11,14 +11,19 @@ var common = {
 	//初始化主页
 
 	init: function() {
-		if($('.articleinfolist').children('span').eq(1).text().trim()=="")
+		
+		function trim(str){ //删除左右两端的空格
+　　   	  return str.replace(/(^\s*)|(\s*$)/g, "");
+　　		 }
+		
+		if(trim($('.articleinfolist').children('span').eq(1).text())=="")
 		{
 			$('.articleinfolist').children('span').eq(1).text("深圳统计局");
 		}
 		
 		function currentstyle(){
 		
-			var duiyintxt= $('.addlv1').text().trim();
+			var duiyintxt= trim($('.addlv1').text());
 		$('.navlist>li').children('a').each(function(i,el){
 			if(duiyintxt==$(el).text())
 			{	$('.navlist>li').eq(parseInt(typenum) + 1).children('span').show();
@@ -31,7 +36,12 @@ var common = {
 		}
 			
 			$("a[href]").click(function(){
-			if(!common.equipment)
+			if($(this).hasClass("notips")){
+				return;
+			}
+			else
+			{
+				if(!common.equipment)
 			{
 				if($(this).attr('id')=='142747')
 				{
@@ -53,6 +63,7 @@ var common = {
 		}else{
 			return confirm('您访问的链接即将离开“深圳统计局”门户网站，是否继续？');
 		}
+			}
 	});
 	
 	/* $('.logoicon a').click(function(){
@@ -171,7 +182,9 @@ var common = {
 		})
 		$('.functionality ul li').mouseout(function() {
 				if(!$(this).parent('ul').hasClass('com-items')) {
-					$(this).css('background-color', 'rgba(0, 0, 0, .5)')
+					$(this).css('background-color', '#666')
+					$(this).css('background-color', 'rgba(0, 0, 0, .5)');
+					
 				}
 
 				
@@ -523,26 +536,49 @@ var common = {
 			}
 
 		}
-
 	},
 	slider: function() {
+		 function judge() {  
+        var startx;//让startx在touch事件函数里是全局性变量。  
+        var endx;  
+        var el = document.getElementById('big_pic');//触摸区域。  
+        function cons() {   //独立封装这个事件可以保证执行顺序，从而能够访问得到应该访问的数据。  
+            if (startx > endx) {  //判断左右移动程序  
+               oBtnPrev.click();
+            } else {  
+                oBtnNext.click();
+            }  
+        }  
+  
+        el.addEventListener('touchstart', function (e) {  
+            var touch = e.changedTouches;  
+            startx = touch[0].clientX;  
+            starty = touch[0].clientY;  
+        });  
+        el.addEventListener('touchend', function (e) {  
+            var touch = e.changedTouches;  
+            endx = touch[0].clientX;  
+            endy = touch[0].clientY;  
+            cons();  //startx endx 的数据收集应该放在touchend事件后执行，而不是放在touchstart事件里执行，这样才能访问到touchstart和touchend这2个事件产生的startx和endx数据。另外startx和endx在_touch事件函数里是全局性的，所以在此函数中都可以访问得到，所以只需要注意事件执行的先后顺序即可。  
+        });  
+    }
 		var oDiv = document.getElementById('ChSlider');
-		var oBtnPrev = document.getElementsByClassName('prev')[0];
-		var oBtnNext = document.getElementsByClassName('next')[0];
-		var oDivSmall = document.getElementsByClassName('small_pic')[0];
+		var oBtnPrev = document.getElementById('prev');
+		var oBtnNext = document.getElementById('next');
+		var oDivSmall = document.getElementById('small_pic');
 		var oUlSmall = oDivSmall.getElementsByTagName('ul')[0];
 		var aLiSmall = oDivSmall.getElementsByTagName('li');
-		var oUlBig = document.getElementsByClassName('big_pic')[0];
+		var oUlBig = document.getElementById('big_pic');
 		var aLiBig = oUlBig.getElementsByTagName('li');
 		var nowZIndex = 2;
 		var now = 0;
 		var webwidth = window.screen.width;
-
+		
 		function tab() {
 			for(var i = 0; i < aLiBig.length; i++) {
 				aLiBig[i].style.zIndex = 0;
 			}
-			aLiBig[now].previousElementSibling.style.zIndex = nowZIndex;
+			
 			aLiBig[now].style.zIndex = nowZIndex + 1;
 			for(var i = 0; i < aLiSmall.length; i++) {
 				startMove(aLiSmall[i], 'opacity', 60);
@@ -630,6 +666,7 @@ var common = {
 				return false;
 			}
 		};
+		judge() 
 		var timer = setInterval(oBtnNext.onclick, 3000);
 		oDiv.onmouseover = function() {
 			clearInterval(timer);
