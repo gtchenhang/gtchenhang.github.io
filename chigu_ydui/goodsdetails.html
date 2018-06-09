@@ -190,17 +190,23 @@
 		<script src="js/ydui.js"></script>
 		<script>
 			! function($) {
-
+				 function GetUrlPath(){  
+        　　　　var url = document.location.toString();               
+        　　　　if(url.indexOf("/") != -1){  
+                    url = url.substring(0,  url.lastIndexOf("/")) ;  
+        　　　　}  
+        　　　　return url;  
+        　　}  
+         
 				function paowux(ev) {
 					var sjhei = window.screen.height;
 					var sjwd = $('.tabbar-item').outerWidth();
 					var lunbw = $('.tabbar-icon').outerWidth();
 					var sjwh = $('.tabbar-item').outerHeight();
 				
-					var mleft = (sjwd - lunbw) / 2;
-						console.log(mleft)
-					var src = $('.slider-wrapper .slider-item').eq(1).find('img').attr('src');
-
+					var mleft = (sjwd - lunbw) / 2;			 
+					var fzd=GetUrlPath();
+					var src = fzd+"/"+$('.slider-wrapper .slider-item').eq(1).find('img').attr('src');
 					var flyImg = "<img class='u-flyer' width='40' height='40'" + "src=" + src + "/>";
 					var flyer = $(flyImg);
 					flyer.fly({
