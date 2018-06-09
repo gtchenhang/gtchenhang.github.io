@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
 		<meta charset="UTF-8">
@@ -18,23 +19,48 @@
 		body {
 			background-color: #FFFFFF;
 		}
-		
 		.btn-own {
 			background-color: #afc738;
-		}
-		
+		}		
 		.selectall {
 			text-align: center;
-		}
-		
+		}		
 		.selectall i {
 			position: initial;
 			left: initial;
-		}
+		}		
 		.shopselect>div {
-    width: 40%;
+			width: 40%;
+		}		
+		.tabbar-item {
+			height: 100%;		
+		}		
+		.slider-item {
+			width: 100%;
+			height: 4.8rem;
+			line-height: 4.8rem;
+			text-align: center;	
+			display: table;
+			
+		}
 
-}.tabbar-item{height: 100%;}
+		.slider-item a {
+			
+			display: inline-block;
+			overflow: hidden;
+			 display: table-cell;  
+			vertical-align:middle;
+			margin:auto 0;
+
+		}
+		.slider-item img {
+			width: inherit;
+			margin: 0 auto;
+			max-width: 100%;
+			max-height:  4.8rem;
+					
+		}
+		
 	</style>
 
 	<body>
@@ -42,17 +68,18 @@
 		<section class="g-flexview">
 
 			<div class="g-scrollview">
-				<div class="m-slider" data-ydui-slider="{autoplay: 3000}">
+				<div class="m-slider" data-ydui-slider="{autoplay: 30000000}">
 					<!-- 参数在这里 -->
 					<div class="slider-wrapper">
+						
 						<div class="slider-item">
 							<a href="#">
-								<img src="http://static.ydcss.com/uploads/ydui/1.jpg">
+								<img src="img/timg.jpg">
 							</a>
 						</div>
 						<div class="slider-item">
 							<a href="#">
-								<img src="http://static.ydcss.com/uploads/ydui/2.jpg">
+								<img src="img/contact.jpg">
 							</a>
 						</div>
 						<div class="slider-item">
@@ -78,7 +105,6 @@
 					</div>
 				</div>
 				<div class="bggray2"></div>
-
 				<div class="goodsinfolist">
 
 					<table>
@@ -143,27 +169,72 @@
 			</div>
 			<div class="shopselect">
 				<div style="width: 20%;">
-					 <div  class="tabbar-item">
-        <span class="tabbar-icon">
+					<div class="tabbar-item">
+						<span class="tabbar-icon">
             <i class="iconfont icon-gouwuche1"></i>
             
              <span class="badge badge-danger">2</span>
-        </span>
-       
+						</span>
 
-    </div>
+					</div>
 				</div>
 				<div class="mid4"><span>总价：</span><span class="list-price">¥34.70</span></div>
-				<div><button class="btn btn-danger btn-own">加入购物车</button></div>
+				<div><button id="car" class="btn btn-danger btn-own">加入购物车</button></div>
 			</div>
 		</section>
 
 		<!-- 引入jQuery 2.0+ -->
 		<script src="js/jquery.min.js"></script>
 		<!-- 引入YDUI脚本 -->
+		<script type="text/javascript" src="js/jquery.fly.min.js"></script>
 		<script src="js/ydui.js"></script>
 		<script>
 			! function($) {
+
+				function paowux(ev) {
+					var sjhei = window.screen.height;
+					var sjwd = $('.tabbar-item').outerWidth();
+					var lunbw = $('.tabbar-icon').outerWidth();
+					var sjwh = $('.tabbar-item').outerHeight();
+				
+					var mleft = (sjwd - lunbw) / 2;
+						console.log(mleft)
+					var src = $('.slider-wrapper .slider-item').eq(1).find('img').attr('src');
+
+					var flyImg = "<img class='u-flyer' width='40' height='40'" + "src=" + src + "/>";
+					var flyer = $(flyImg);
+					flyer.fly({
+						start: {
+							left: ev.pageX,
+							top: ev.pageY,
+						},
+						end: {
+							left:mleft,
+							top: sjhei -(sjwh*0.8),
+							width: 10,
+							height:10
+						},
+						onEnd: function() {
+							
+							this.destory(); //销毁抛物体   
+						}
+					});
+				}
+				/* 调用：通常在ajax发送前显示，ajax结束后隐藏；*/
+				$('#car').on('click', function(ev) {
+					/* ajax发送前显示加载中提示 */
+					YDUI.dialog.loading.open('加载中...');
+					$.ajax({
+						complete: function() {
+							$('.badge ').text(parseFloat($('.badge ').text()) + 1)
+							/* 结束后隐藏加载中提示 */
+							YDUI.dialog.loading.close();
+							paowux(ev);
+
+						}
+					});
+
+				});
 
 			}(jQuery);
 		</script>
