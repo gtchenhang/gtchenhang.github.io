@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Convenience map</title>
+		<link rel="stylesheet" type="text/css" href="images/xwzx_jgzx.css" />
+		<link rel="stylesheet" href="images/base.css" />
+		<script src=" images/jquery-1.12.0.min.js" type="text/javascript"></script>
+		<script>
+			//			跳转下拉框
+			function MM_jumpMenu(targ, selObj, restore) {
+				eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
+				if(restore) selObj.selectedIndex = 0;
+			};
+		</script>
+	</head>
+<style>
+	#dayinneirong{
+		border: solid 1px #D2D2D2;
+		width: 1143px;
+		margin: 30px auto 0 auto;
+		
+	}
+	#dayinneirong img{
+		width: 1143px;
+	}
+	.in_box{
+		width: 1143px;
+	}
+</style>
+	<body>
+		<!--头部开始-->
+		<div class="header">
+			<div class="w_94">
+				<div class="headleft"><img src="images/logo_txt.png"></div>
+				<div class="headright">
+					<ul>
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href="#">Organization</a>
+						</li>
+						<li>
+							<a href="#">Service</a>
+						</li>
+						<li>
+							<a href="#">Scientific research</a>
+						</li>
+						<li>
+							<a href="#">Contact us</a>
+						</li>
+					</ul>
+					<div class="searchorlang">
+						<i class="icon iconfont icon-sousuo"></i>
+						<i class="icon iconfont icon-zhongyingwenqiehuan"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--头部结束-->
+
+		<div class="con">
+
+			<!----------------中间主内容开始-------------------------->
+
+			<div id="content">
+				<div class="in_box" id='in_box'>
+					<div class="in_top">
+						<span class="in_logo xilanin_logo">
+						<div class="logoimg"><img src="images/fwzn_logo2.png" /></div>
+							<div class="logotxt"><div>
+								 Convenience<br/>map
+							</div></div>
+						
+					</span>
+						<p class="conTitle1">您的位置：
+							<a href=" " title="首页" class="CurrChnlCls">首页</a>&nbsp;&gt;&nbsp;
+							<a href="../" title="便民地图" class="CurrChnlCls">便民地图</a>
+						</p>
+						<!--搜索框-->
+						<div class="search2">
+
+						</div>
+					</div>
+					<div id="dayinneirong">
+						<img src="images/engmaps.png">
+
+					</div>
+
+					</div>
+					<div class="footer">
+						<div class="fttop">
+							<a class="ftleft" href="#"><img src="images/20180314.png" />No. 44030502001478, Guangdong public network Anne</a>
+							<a class="ftright"><img src="images/ftbluecion.png" /></a>
+						</div>
+						<div class="henx"></div>
+						<div class="ftdown">
+							<a class="ftleft"> ICP 15111404 -1, Guangdong Province</a>
+							<a class="ftright">Copyright：Shenzhen Institute for Drug Control (Shenzhen Testing Center of Medical Devices)</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<!--底部开始-->
+
+			<!--底部结束-->
+
+	</body>
+
+</html>
+<script type="text/javascript">
+	//保护色
+	$('.se1').click(function() {
+		$('.content_nr').css('background-color', '#d1ffe7');
+	});
+	$('.se2').click(function() {
+		$('.content_nr').css('background-color', '#ffd2ce');
+	});
+	$('.se3').click(function() {
+		$('.content_nr').css('background-color', '#fff2c6');
+	});
+	$('.se4').click(function() {
+		$('.content_nr').css('background-color', '#cfcfcf');
+	});
+	$('.se5').click(function() {
+		$('.content_nr').css('background-color', '#b5cdd3');
+	});
+	$('.se6').click(function() {
+		$('.content_nr').css('background-color', '#ffffff');
+	});
+	//	字体大小
+	$('.pmr').click(function() {
+		$('.zhengwen').css({
+			'font-size': '14px',
+			'line-height': '21px'
+		});
+	});
+	$('.pda').click(function() {
+		$('.zhengwen').css({
+			'font-size': '18px',
+			'line-height': '27px'
+		});
+	});
+	$('.pzhong').click(function() {
+		$('.zhengwen').css({
+			'font-size': '16px',
+			'line-height': '24px'
+		});
+	});
+	$('.pxiao').click(function() {
+		$('.zhengwen').css({
+			'font-size': '12px',
+			'line-height': '18px'
+		});
+	});
+</script>
+
+<!--打印-->
+<script>
+	$('.pdy').click(function() {
+		var global_Html = "";
+		global_Html = document.body.innerHTML;
+		document.body.innerHTML = document.getElementById('content').innerHTML;　　　　　　　　　　　　　　
+		window.print();
+		window.setTimeout(function() {
+			document.body.innerHTML = global_Html;
+		}, 1500);
+	});
+</script>

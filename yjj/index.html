@@ -1,0 +1,403 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<!--兼容ie7强制使用Edge-->
+		<title>深圳市药品检验研究院</title>
+		<meta http-equiv="keywords" content="深圳市药品检验研究院">
+		<meta http-equiv="description" content="深圳市药品检验研究院">
+		<!--<link rel="stylesheet" href="images/iconfont.css" />-->
+		<link rel="stylesheet" type="text/css" href="images/index.css" />
+		<link rel="stylesheet" href="images/jquery.fullPage.css" />
+		<link rel="stylesheet" href="images/base.css" />
+		<script src="images/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="images/jquery.fullPage.min.js"></script>
+
+	</head>
+	<style>
+		.right {
+			width: inherit;
+			float: none;
+			height: auto !important;
+		}
+		
+		span {
+			margin-left: 0;
+		}
+	</style>
+	<script>
+		function autoslide() {
+			slidewid = $('.fp-slides').innerWidth();
+			slidehei = $('.fp-slides').outerHeight();
+			slideimgw = $('.slide a').innerWidth();
+			slideimgh = $('.slide a').outerHeight();
+			var top = -((slideimgh - slidehei) / 2);
+			var wid = -((slideimgw - slidewid) / 2);
+			console.log(slideimgh)
+			$('.slide img').css({
+				'position': 'relative',
+				'top': top + 'px',
+				'left': wid + 'px'
+			})
+		}
+		autoslide();
+		$(window).resize(function() {
+			autoslide();
+		})
+		$(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: [],
+				paddingTop: 100,
+				slidesNavigation: false,
+				navigation: true,
+				keyboardScrolling: true,
+				loopBottom: true,
+				paddingTop: 100 + 'px',
+				paddingBottom: 56 + 'px',
+				afterLoad: function(anchorLink, index) {
+					$('.fullnext').show()
+					if(index == $('#fp-nav ul li').length) {
+						$('.fullnext').hide()
+					}
+
+				},
+				onLeave: function() {
+					$('.fullnext').hide();
+				}
+			});
+
+			setInterval(function() {
+				$.fn.fullpage.moveSlideRight();
+			}, 3000);
+
+			$('.fullnext').click(function() {
+				$('#fullpage').fullpage.moveSectionDown();
+
+			})
+			$('#fp-nav ul li').each(function(i, el) {
+				$(el).find('span').text('0' + (i + 1));
+			})
+
+		});
+	</script>
+
+	<body>
+		<div class="header indexhead">
+			<div class="w_94">
+				<div class="headleft"><img src="images/logo_txt.png"></div>
+				<div class="headright">
+					<ul>
+						<li>
+							<a href="便民地图.html">Home</a>
+						</li>
+						<li>
+							<a href="机构职能细览.html">Organization</a>
+						</li>
+						<li>
+							<a href="通用普通概览.html">Service</a>
+						</li>
+						<li>
+							<a href="通用普通细览.html">Scientific research</a>
+						</li>
+						<li>
+							<a href="#">Contact us</a>
+						</li>
+					</ul>
+					<div class="searchorlang">
+						<i class="icon iconfont icon-sousuo"></i>
+						<i class="icon iconfont icon-zhongyingwenqiehuan"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="fullpage">
+			<div class="section">
+				<div class="pagecontent">
+					<div class="slide slidebg1" style="position: relative;">
+						<a href="#"><img src="images/slidebg2.jpg" /></a>
+						<div class="indextxt">
+							<p class="indexp1">Core Values</p>
+							<p class="indexp2">Strict Responsibility,</p>
+							<p class="indexp2">Innovation and Dedication</p>
+						</div>
+					</div>
+					<div class="slide slidebg2" style="position: relative;">
+						<a href="#"><img src="images/slidebg1.jpg" /></a>
+						<div class="indextxt">
+							<p class="indexp1">Goal Vision</p>
+							<p class="indexp2">Building an International First-class</p>
+							<p class="indexp2">and Ieading Iaboratory in China</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section sectiontwo">
+				<div class="pagecontent pagec2">
+					<div class="ognz1">
+						<h3 class="w_80">Organization</h3>
+						<div class="w_80"><span class="hengx"></span></div>
+						<p class="w_80">Brief introduction of Shenzhen Institute of drug control</p>
+						<div class="w_80">
+							<a class="readmore ">Read more</a>
+						</div>
+						<div class="w_80 ognz1img"><img src="images/ognz1.jpg" /></div>
+					</div>
+					<div class="ognz2">
+						<p>Shenzhen Institute for Drug Control (SZIDC) was established in 1982, and added with Shenzhen Testing Center of Medical Devices (STCMD) since 2003. It is a legally authorized testing and research institute which implements quality supervision and inspection on drugs, health food, cosmetics, and medical devices. It is also the State-authorized administrative testing agency for cosmetic licensing approval, the registration inspection agency for Chinese Traditional Patent Medicines in Hong Kong and Macao, the supervision and registration inspection agency for medical devices, the registration and review inspection agency for health food. In Guangdong Province, SZIDC is one of the supervision and inspection agencies for health food and cosmetics, and one of the record registration inspection agencies for domestic non-special-purpose cosmetics. Furthermore, SZIDC is the national post-doctoral workstation and the post-doctoral innovation practice bases for Guangdong Province and Shenzhen City.</p>
+						<p>There are 9 testing departments including Chemical Drugs Testing Department, Traditional Chinese Medicine Testing Department, Health food and Cosmetics Testing Department, Pharmacology and Toxicology Department, Microbiological Testing Department</p>
+					</div>
+					<div class="ognz3">
+						<p>Analysis and Testing Research Department, Non-active Medical Devices Testing Department, In-vitro Diagnostic Reagents Testing Department and Active Medical Devices Testing Department, as well as seven administrative departments including Business and Technology Department, Quality Management Department, Information Technology Department, etc.</p>
+						<p>There are nearly 200 personnel in SZIDC, about 53 of them have master degree and 15 of them have doctor degree. And 41 of them with senior professional title (17 chief pharmacists and 24 associate chief pharmacists). The professional group includes experts enjoying the State Council Special Allowance and the Special Allowance of Shenzhen Municipal Government, Members of Chinese Pharmacopeia Commission, National Health food Evaluation Expert, CNAS and CMA Auditors, Shenzhen High-level Leading Technical Talents, Doctoral and Master’s Supervisors.</p>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<div class="pagecontent pagec2">
+					<div style="overflow: hidden;width: 100%;">
+						<div class="serve1">
+							<h3 class="w_80 ser1h3">Service</h3>
+							<div class="w_80 serveritems thewida">
+								<a href="#">
+									<div><i class="icon iconfont icon-wangshangbanshui"></i></div>
+									<div>Online admissibility</div>
+								</a>
+								<a href="#">
+									<div><i class="icon iconfont icon-wenti-copy"></i></div>
+									<div>Common problem</div>
+								</a>
+								<a href="#">
+									<div><i class="icon iconfont icon-ditu"></i></div>
+									<div>A map of the people</div>
+								</a>
+
+							</div>
+							<div class="w_80 serveritems thewida">
+
+								<a href="#">
+									<div><i class="icon iconfont icon-xiazai"></i></div>
+									<div>Download the area</div>
+								</a>
+								<a href="#">
+									<div><i class="icon iconfont icon-youxiang1"></i></div>
+									<div>Dean mailbox</div>
+								</a>
+								<a href="#">
+									<div><i class="icon iconfont icon-zhengshu"></i></div>
+									<div>certificate</div>
+								</a>
+							</div>
+
+						</div>
+						<div class="serve2">
+							<div class="serverimgitems serverimgitemsright">
+
+								<div class="servitems">
+									<h3>Detection project</h3>
+									<ul>
+										<li>
+											<a href="#">Inspection information on administrative administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+										<li>
+											<a href="#">Inspection information on administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+										<li>
+											<a href="#">Inspection information on administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+										<li>
+											<a href="#">Inspection information on administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+
+									</ul>
+									<span class="servermore">more</span>
+								</div>
+								<div class="servimg">
+									<img style="top: 0;" src="images/serverimg3.png" />
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="serverwarp">
+						<div class="serve1">
+							<div class="serverimgitems">
+								<div class="servimg">
+									<img src="images/serverimg.jpg" />
+								</div>
+								<div class="servitems">
+									<h3>Notice of inspection</h3>
+									<ul>
+										<li>
+											<a href="#">Inspection information on administrative administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+										<li>
+											<a href="#">Inspection information on administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+										<li>
+											<a href="#">Inspection information on administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+										<li>
+											<a href="#">Inspection information on administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+
+									</ul>
+									<span class="servermore">more</span>
+								</div>
+							</div>
+						</div>
+						<div class="serve2">
+							<div class="serverimgitems">
+								<div class="servimg">
+									<img src="images/serverimg2.jpg" />
+								</div>
+								<div class="servitems">
+									<h3>Notice of inspection</h3>
+									<ul>
+										<li>
+											<a href="#">Inspection information on administrative administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+										<li>
+											<a href="#">Inspection information on administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+										<li>
+											<a href="#">Inspection information on administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+										<li>
+											<a href="#">Inspection information on administrative licensing of cosmetics</a>
+											<span>2018-04-20</span>
+										</li>
+
+									</ul>
+									<span class="servermore">more</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<div class="pagecontent pagec2">
+					<div class="scileft">
+						<h3 class="w_80">Scientific research</h3>
+						<ul class="scienul">
+							<li class="hsbg">
+								<a href="">Scientific research paper</a>
+							</li>
+							<li>
+								<a href="">Notice</a>
+							</li>
+							<li>
+								<a href="">Scientific research mien</a>
+							</li>
+							<li>
+								<a href="">Research trends</a>
+							</li>
+						</ul>
+					</div>
+					<div class="sciright">
+						<div class="scrighthx"></div>
+						<ul class="scirightul">
+							<li>
+								<div>
+									<p>08-06</p>
+									<p>2018</p>
+								</div>
+								<a href="">Inspection information on administrative licensing of cosmetics</a>
+							</li>
+							<li>
+								<div>
+									<p>08-06</p>
+									<p>2018</p>
+								</div>
+								<a href="">Inspection information on administrative licensing of cosmetics</a>
+							</li>
+							<li>
+								<div>
+									<p>08-06</p>
+									<p>2018</p>
+								</div>
+								<a href="">Inspection information on administrative licensing of cosmetics</a>
+							</li>
+							<li>
+								<div>
+									<p>08-06</p>
+									<p>2018</p>
+								</div>
+								<a href="">Inspection information on administrative licensing of cosmetics</a>
+							</li>
+							<li>
+								<div>
+									<p>08-06</p>
+									<p>2018</p>
+								</div>
+								<a href="">Inspection information on administrative licensing of cosmetics</a>
+							</li>
+						</ul>
+						<div class="sciyema">
+							<a href="#" class="oncli">1</a>
+							<a>2</a>
+							<a>3</a>
+							<a>4</a>
+							<a>5</a>
+							<a>...</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<div class="pagecontent pagec2" style="position: relative;">
+					<h3 class="contactus">Contact us</h3>
+					<div class="contactleftri">
+						<div class="ctactleft">
+							<h4>Shenzhen Institute for Drug Control</h4>
+							<h4>(Shenzhen Testing Center of Medical Devices)</h4>
+							<p>Add: Two Road No. 28 in Nanshan District, Shenzhen </p>
+							<p>Pos: 518057</p>
+							<p>Tel: 0755-26031832, 0755-26031833, 0755-26031121 (apparatus)</p>
+							<p>Fax: 0755-26031834</p>
+						</div>
+						<div class="ctactright">
+							<h4>Active medical device testing department</h4>
+							<p>Add: No. 4, Tong FA Road, Xili street, Nanshan District, Shenzhen</p>
+							<p>Pos: 518055</p>
+							<p>Tel: 0755-86009898-31001</p>
+							<p> Fax: 0755-86928985</p>
+						</div>
+					</div>
+
+					<div style="position: absolute; bottom: 50px;width: 100%;">
+						<div class="footer">
+							<div class="fttop">
+								<a class="ftleft" href="#"><img src="images/20180314.png" />No. 44030502001478, Guangdong public network Anne</a>
+								<a class="ftright"><img src="images/ftbluecion.png" /></a>
+							</div>
+							<div class="henx"></div>
+							<div class="ftdown">
+								<a class="ftleft"> ICP 15111404 -1, Guangdong Province</a>
+								<a class="ftright">Copyright：Shenzhen Institute for Drug Control (Shenzhen Testing Center of Medical Devices)</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<i class="fullnext icon iconfont icon-down-trangle"></i>
+
+	</body>
+	<script src="images/index.js"></script>
+
+</html>
