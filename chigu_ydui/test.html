@@ -82,10 +82,10 @@
 		var towdiv = document.querySelector('.two');
 		var oendetails = onediv.getBoundingClientRect();
 		
-		document.addEventListener('touchmove', function (e) {
-  for (var i = 0; i < e.changedTouches.length; i++) {
-   alert(e.changedTouches[i].identifier);
-  }
+		document.addEventListener('touchstart', function (e) {
+
+   alert(e.identifier);
+  
 }, false);
 
 	</script>
