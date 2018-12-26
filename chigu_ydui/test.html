@@ -84,7 +84,9 @@
 		
 		document.addEventListener('touchstart', function (e) {
 
-   alert(e.identifier);
+  for (var i = 0; i < e.changedTouches.length; i++) {
+   alert(e.changedTouches[i].identifier);
+  }
   
 }, false);
 
