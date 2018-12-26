@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<link>
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	.ggg {
+		width: 400px;
+		height: 400px;
+		background-color: aqua;
+	}
+
+	a {
+		display: block;
+		height: 100px;
+
+
+	}
+
+	img {
+		width: 100%;
+	}
+	.one{
+		height: 100px;
+		width: 100px;
+		background-color: red;
+		
+	}
+	.two{
+		height: 100px;
+		width: 100px;
+		background-color: yellow;
+	}
+	.three{
+		height: 100px;
+		width: 100px;
+		background-color: green;
+	}
+	.four{
+		height: 100px;
+		width: 100px;
+		background-color: black;
+	}
+	.five{
+		height: 1100px;
+		width: 100px;
+		background-color: pink;
+	}
+</style>
+<script src="./jquery-1.7.2.min.js"></script>
+
+<body>
+	<a href="#two"></a>
+	<div class="one" draggable="true" id="one" data-num='2134'></div>
+	<div class="two" dropzone="" id="two"></div>
+	<div class="three"></div>
+	<div class="four"></div>
+	<div class="five"></div>
+	<span id="inline">
+		Hello World
+		 Hello World 
+		 Hello World</span>
+	<input type="checkbox" id='chk'>
+
+	<div id="example">
+		<p class="foo"></p>
+		<p class="foo"></p>
+		<p class="foo"></p>
+		<p class="foo"></p>
+		<p class="foo"></p>
+	</div>
+	<script>
+		var onediv = document.querySelector('.one');
+		var towdiv = document.querySelector('.two');
+		var oendetails = onediv.getBoundingClientRect();
+		
+		document.addEventListener('touchmove', function (e) {
+  for (var i = 0; i < e.changedTouches.length; i++) {
+   alert(e.changedTouches[i].identifier);
+  }
+}, false);
+
+	</script>
+</body>
+
+</html>
